@@ -16,7 +16,6 @@ export default function ContactPage() {
 
       {/* Contact Info */}
       <div className="py-10 sm:py-12 md:py-16 px-2 sm:px-4 md:px-24 text-center">
-        <h2 className="text-[24px] sm:text-[30px] md:text-[40px] font-extrabold text-bordeaux uppercase mb-2 tracking-[2px] drop-shadow-[0_2px_8px_rgba(109,15,54,0.5)]">Contact</h2>
         <p className="text-pearl text-[13px] sm:text-[15px] md:text-[17px] mb-8 sm:mb-10 md:mb-12 tracking-wide">Contact Information</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
@@ -61,7 +60,7 @@ export default function ContactPage() {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: '0 0 24px 8px #6D0F36' }}
               whileTap={{ scale: 0.98 }}
-              className="bg-bordeaux text-pearl font-semibold py-2.5 sm:py-3 rounded-[8px] text-[14px] sm:text-[15px] shadow-lg transition-all drop-shadow-[0_0_12px_#6D0F36b3] border-none outline-none focus:ring-2 focus:ring-bordeaux"
+              className="bg-bordeaux text-pearl font-semibold py-2.5 sm:py-3 rounded-[8px] text-[14px] sm:text-[15px] shadow-lg"
             >
               Submit Button
             </motion.button>

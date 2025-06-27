@@ -96,7 +96,9 @@ export default function Header() {
             >2</motion.span>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} className="hidden lg:block">
-            <User className="w-5 h-5 text-white/70 hover:text-white transition duration-300 cursor-pointer" />
+            <Link href="/register">
+              <User className="w-5 h-5 text-white/70 hover:text-white transition duration-300 cursor-pointer" />
+            </Link>
           </motion.div>
           <motion.button
             onClick={() => setIsMobileMenuOpen(true)}
@@ -147,7 +149,9 @@ export default function Header() {
                 transition={{ delay: 0.5 }}
                 className="mt-8 sm:mt-12 flex items-center gap-3 sm:gap-4 text-white text-base"
               >
-                <User className="w-5 h-5" /> <span>Login / Signup</span>
+                <Link href="/login" className="flex items-center gap-2">
+                  <User className="w-5 h-5" /> <span>Login / Signup</span>
+                </Link>
               </motion.div>
             </motion.div>
           </motion.div>
