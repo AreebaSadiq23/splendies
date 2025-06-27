@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Math&display=swap');
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --onyx: #0A0A0A;
+  --bordeaux: #6D0F36;
+  --charcoal: #36454F;
+  --pearl: #F5F5F5;
+}
+
+body {
+  @apply bg-[var(--onyx)] text-[var(--pearl)] font-sans;
+}
+
+.bg-onyx {
+  background-color: var(--onyx);
+}
+.bg-bordeaux {
+  background-color: var(--bordeaux);
+}
+.bg-charcoal {
+  background-color: var(--charcoal);
+}
+.text-pearl {
+  color: var(--pearl);
+}
+.text-bordeaux {
+  color: var(--bordeaux);
+}
+.border-charcoal {
+  border-color: var(--charcoal);
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}
+.triangle-shape {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* Perfect inverted triangle */
+.inverted-triangle-shape {
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.font-libertinus {
+  font-family: 'Libertinus Math', serif;
+}
