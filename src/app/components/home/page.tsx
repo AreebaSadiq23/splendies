@@ -317,10 +317,10 @@ export default function HomeSection() {
       </div>
 
       {/* === Video Section === */}
-      <section className="w-full relative bg-black mt-10">
+      <section className="w-full relative mt-10">
         <video
           id="promo-video"
-          src="/videos/1.mov"
+          src="/videos/1.mp4"
           autoPlay
           loop
           muted
