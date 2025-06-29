@@ -13,11 +13,6 @@ const bgImages = [
   '/images/ban2.jpg',
   '/images/ban3.jpg',
 ];
-const featuredImages = [
-  { src: '/images/2.jpg', price: '$120' },
-  { src: '/images/3.jpg', price: '$95' },
-  { src: '/images/4.jpg', price: '$150' },
-];
 
 const serviceImages = [
   '/images/5.jpg',

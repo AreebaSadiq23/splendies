@@ -7,13 +7,6 @@ import { LucideStar } from "lucide-react";
 import { FaShoppingCart } from "react-icons/fa";
 import Header from "../../components/header";
 
-type Review = {
-  name: string;
-  rating: number;
-  text: string;
-  isUser?: boolean;
-};
-
 // Dummy product data (same as in product/page.tsx)
 const exploreProducts = [
   { id: 1, image: "/images/12.jpg", title: "Lorem ipsum dolor sit emit", price: "$100", rating: 4, reviews: "(88)",
