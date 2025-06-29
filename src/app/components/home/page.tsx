@@ -429,10 +429,10 @@ export default function HomeSection() {
                 </button>
               </div>
               <Image
-                src={"/images/woman-wearing.png"}
+                src={"/images/woman.png"}
                 width={500}
                 height={500}
-                alt="PlayStation"
+                alt="women"
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
