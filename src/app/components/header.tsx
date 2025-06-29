@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ShoppingCart, Search, User, ChevronDown, Truck } from 'lucide-react';
+import { Menu, X, ShoppingCart, Search, User, Truck } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Header() {
@@ -67,7 +67,7 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex gap-8 xl:gap-12 text-xs xl:text-sm">
-          {[{ label: 'Home', href: '/' },  { label: 'Product', href: '/product' }, { label: 'Contact', href: '/contact' }].map((item, idx) => (
+          {[{ label: 'Home', href: '/' },  { label: 'Product', href: '/product' }, { label: 'Contact', href: '/contact' }].map((item) => (
             <motion.div
               key={item.label}
               whileHover={{ scale: 1.1, x: 2 }}

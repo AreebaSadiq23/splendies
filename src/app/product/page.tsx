@@ -179,10 +179,13 @@ export default function ContactPage() {
       >
         {['/images/ban1.jpg', '/images/ban2.jpg', '/images/ban3.jpg'].map((img, idx) => (
           <div key={idx} className="relative min-h-[60vw] h-[60vw] sm:min-h-[400px] sm:h-[400px] md:min-h-[500px] md:h-[500px] lg:min-h-[600px] lg:h-[600px] w-full">
-            <img
+            <Image
               src={img}
               alt={`Hero ${idx + 1}`}
+              fill
               className="absolute inset-0 w-full h-full object-cover"
+              sizes="100vw"
+              priority={idx === 0}
             />
             <div className="absolute inset-0 bg-black/50 z-10" />
             <div className="relative z-20 flex flex-col justify-center items-start h-full px-4 sm:px-8 md:px-20 text-left mt-24 sm:mt-10">

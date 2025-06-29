@@ -135,10 +135,13 @@ export default function HomeSection() {
         >
           {bgImages.map((img, idx) => (
             <div key={idx} className="relative min-h-[60vw] h-[60vw] sm:min-h-[400px] sm:h-[400px] md:min-h-[500px] md:h-[500px] lg:min-h-[600px] lg:h-[600px] w-full">
-              <img
+              <Image
                 src={img}
                 alt={`Hero ${idx + 1}`}
+                fill
                 className="absolute inset-0 w-full h-full object-cover"
+                sizes="100vw"
+                priority={idx === 0}
               />
               <div className="absolute inset-0 bg-black/50 z-10" />
               <div className="relative z-20 flex flex-col justify-center items-start h-full px-4 sm:px-8 md:px-20 text-left mt-24 sm:mt-10">
@@ -185,44 +188,56 @@ export default function HomeSection() {
           Ratione dolor earum magnam omnis in necessitatibus non</p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center gap-6 mb-10">
           <div className="w-20 h-20 transform rotate-45 overflow-hidden border-2 border-pearl shadow-md">
-            <img
+            <Image
               src="/images/2.jpg"
               alt="Rhombus 1"
+              width={80}
+              height={80}
               className="w-full h-full object-cover transform -rotate-45"
             />
           </div>
           <div className="w-20 h-20 transform rotate-45 overflow-hidden border-2 border-pearl shadow-md">
-            <img
+            <Image
               src="/images/3.jpg"
               alt="Rhombus 2"
+              width={80}
+              height={80}
               className="w-full h-full object-cover transform -rotate-45"
             />
           </div>
           <div className="w-20 h-20 transform rotate-45 overflow-hidden border-2 border-pearl shadow-md">
-            <img
+            <Image
               src="/images/4.jpg"
               alt="Rhombus 3"
+              width={80}
+              height={80}
               className="w-full h-full object-cover transform -rotate-45"
             />
           </div>
           <div className="w-20 h-20 transform rotate-45 overflow-hidden border-2 border-pearl shadow-md">
-            <img
+            <Image
               src="/images/10.jpg"
               alt="Rhombus 4"
+              width={80}
+              height={80}
               className="w-full h-full object-cover transform -rotate-45"
             />
           </div>
           <div className="w-20 h-20 transform rotate-45 overflow-hidden border-2 border-pearl shadow-md">
-            <img
+            <Image
               src="/images/11.jpg"
               alt="Rhombus 5"
+              width={80}
+              height={80}
               className="w-full h-full object-cover transform -rotate-45"
             />
           </div>
           <div className="w-20 h-20 transform rotate-45 overflow-hidden border-2 border-pearl shadow-md">
-            <img
+            <Image
               src="/images/9.jpg"
               alt="Rhombus 6"
+              width={80}
+              height={80}
               className="w-full h-full object-cover transform -rotate-45"
             />
           </div>
@@ -248,9 +263,11 @@ export default function HomeSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {serviceImages.map((src, i) => (
             <div key={i} className="overflow-hidden flex justify-center items-center">
-              <img
+              <Image
                 src={src}
                 alt={`service-${i}`}
+                width={128}
+                height={192}
                 className="w-32 h-48 object-cover border-4 border-onyx rounded-[999px]"
               />
             </div>
