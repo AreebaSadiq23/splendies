@@ -3,7 +3,7 @@ import Header from "../components/header";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useAppContext } from "../context/AppContext/page";
+import { useAppContext } from "../context/AppContext/provider";
 import { User, Mail, Lock, Eye, EyeOff } from "lucide-react";
 
 export default function Register() {
