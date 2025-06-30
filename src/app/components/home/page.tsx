@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { LucideTruck, LucideUndo2, LucideLeaf, LucideCheckCircle, Heart, Star, LucideStar, CheckCircle, Headphones, Eye } from 'lucide-react';
+import { LucideTruck, LucideUndo2, LucideLeaf, LucideCheckCircle, Heart, Star, LucideStar, CheckCircle, Headphones } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { FaStar } from "react-icons/fa";
 import Image from "next/image";
@@ -118,7 +118,7 @@ const exploreProducts = [
 export default function HomeSection() {
   return (
     <section className="bg-onyx text-pearl">
-      <section className="relative min-h-[60vw] h-[60vw] sm:min-h-[400px] sm:h-[400px] md:min-h-[500px] md:h-[500px] lg:min-h-[600px] lg:h-[600px] w-full overflow-hidden">
+      <section className="relative min-h-[350px] h-[350px] sm:min-h-[400px] sm:h-[400px] md:min-h-[500px] md:h-[500px] lg:min-h-[600px] lg:h-[600px] w-full overflow-hidden">
         <Carousel
           showThumbs={false}
           showStatus={false}
@@ -129,7 +129,7 @@ export default function HomeSection() {
           className="h-full w-full"
         >
           {bgImages.map((img, idx) => (
-            <div key={idx} className="relative min-h-[60vw] h-[60vw] sm:min-h-[400px] sm:h-[400px] md:min-h-[500px] md:h-[500px] lg:min-h-[600px] lg:h-[600px] w-full">
+            <div key={idx} className="relative min-h-[350px] h-[350px] sm:min-h-[400px] sm:h-[400px] md:min-h-[500px] md:h-[500px] lg:min-h-[600px] lg:h-[600px] w-full">
               <Image
                 src={img}
                 alt={`Hero ${idx + 1}`}
@@ -139,30 +139,32 @@ export default function HomeSection() {
                 priority={idx === 0}
               />
               <div className="absolute inset-0 bg-black/50 z-10" />
-              <div className="relative z-20 flex flex-col justify-center items-start h-full px-4 sm:px-8 md:px-20 text-left mt-24 sm:mt-10">
+              <div className="relative z-20 flex flex-col justify-center items-start h-full px-2 sm:px-8 md:px-20 text-left mt-8 sm:mt-10">
                 <motion.h1
                   initial={{ y: 60, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ type: 'spring', duration: 0.8 }}
-                  className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-pearl tracking-wide leading-tight drop-shadow-[0_2px_8px_rgba(109,15,54,0.5)] mt-4 sm:mt-10 max-w-xs sm:max-w-md md:max-w-xl font-libertinus"
+                  className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-pearl tracking-wide leading-tight drop-shadow-[0_2px_8px_rgba(109,15,54,0.5)] mt-4 sm:mt-10 max-w-xs sm:max-w-md md:max-w-xl font-libertinus text-left"
                 >
-                  Unveil Your <br/> Radiance
+                  Unveil Your <br /> Radiance
                 </motion.h1>
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="text-sm sm:text-base md:text-lg mt-2 sm:mt-4 text-bordeaux max-w-xs sm:max-w-md"
+                  className="text-sm sm:text-base md:text-lg mt-2 sm:mt-4 text-bordeaux max-w-xs sm:max-w-md text-left"
                 >
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat sit temporibus iusto.
                 </motion.p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: 'spring' }}
-                  className="mt-4 sm:mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-pearl text-pearl hover:bg-bordeaux transition text-xs sm:text-base"
-                >
-                  Explore Now
-                </motion.button>
+                <Link href="/product" passHref>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: 'spring' }}
+                    className="mt-4 sm:mt-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-pearl text-pearl hover:bg-bordeaux transition text-xs sm:text-base"
+                  >
+                    Explore Now
+                  </motion.button>
+                </Link>
               </div>
             </div>
           ))}
@@ -178,10 +180,10 @@ export default function HomeSection() {
         >
           New Trend in 2025
         </motion.h2>
-        <p className="text-center text-pearl/70 text-sm md:text-base mb-10">
+        <p className="text-center text-pearl/70 text-xs md:text-base mb-10">
           Lorem ipsum dolor sit amet consectetur adipisicing elit <br />
           Ratione dolor earum magnam omnis in necessitatibus non</p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center gap-6 mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center justify-items-center gap-6 mb-10">
           <div className="w-20 h-20 transform rotate-45 overflow-hidden border-2 border-pearl shadow-md">
             <Image
               src="/images/2.jpg"
@@ -240,7 +242,7 @@ export default function HomeSection() {
       </section>
 
       {/* === Benefits Strip === */}
-      <section className="py-6 px-4 bg-charcoal grid grid-cols-2 md:grid-cols-4 text-center text-sm gap-4">
+      <section className="py-6 px-4 bg-charcoal grid grid-cols-4 text-center text-xs md:text-base lg:text-lg gap-4">
         <div className="flex items-center justify-center gap-2"><LucideTruck size={18} /> Free Shipping</div>
         <div className="flex items-center justify-center gap-2"><LucideUndo2 size={18} /> Easy Returns</div>
         <div className="flex items-center justify-center gap-2"><LucideLeaf size={18} /> Eco Materials</div>
@@ -250,7 +252,7 @@ export default function HomeSection() {
       {/* Our Services Section */}
       <div className="relative z-10 text-pearl px-4 md:px-20 py-20 rounded-b-[100px]">
         <h2 className="text-center text-2xl md:text-4xl font-thin mb-2 text-bordeaux font-libertinus drop-shadow-[0_2px_8px_rgba(109,15,54,0.5)]">Our Services</h2>
-        <p className="text-center text-pearl/70 text-sm md:text-base mb-10">
+        <p className="text-center text-pearl/70 text-xs md:text-base mb-10">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
           Ratione dolor earum magnam omnis in necessitatibus non dolores<br />
           officiis! Nobis totam nemo esse tempore, possimus corrupti neque<br />
@@ -270,7 +272,7 @@ export default function HomeSection() {
         </div>
       </div>
       {/* === Benefits Strip === */}
-      <section className="py-6 px-4 bg-charcoal grid grid-cols-2 md:grid-cols-4 text-center text-sm gap-4">
+      <section className="py-6 px-4 bg-charcoal grid grid-cols-4 text-center text-xs md:text-base lg:text-lg gap-4">
         <div className="flex items-center justify-center gap-2"><LucideTruck size={18} /> Free Shipping</div>
         <div className="flex items-center justify-center gap-2"><LucideUndo2 size={18} /> Easy Returns</div>
         <div className="flex items-center justify-center gap-2"><LucideLeaf size={18} /> Eco Materials</div>
@@ -306,8 +308,8 @@ export default function HomeSection() {
               >
                 <div className="group shadow-md bg-onyx w-full h-[180px] flex justify-center items-center cursor-pointer relative">
                   <Image src={product.image} width={150} height={100} alt={product.title} />
-                  <span className="absolute top-1 right-1 text-bordeaux rounded-full">
-                    <Heart size={20} />
+                  <span className="absolute top-1 right-1 sm:top-2 sm:right-2 text-bordeaux rounded-full">
+                    <Heart size={24} className="w-5 h-5 sm:w-6 sm:h-6" />
                   </span>
                 </div>
                 <h1 className="font-sans pt-2 text-pearl">{product.title}</h1>
@@ -371,11 +373,8 @@ export default function HomeSection() {
                 <div className="group relative shadow-md bg-onyx cursor-pointer w-full h-[240px] flex justify-center items-center">
                   <Image src={product.image} width={150} height={100} alt={product.title} />
                   <span className="bg-bordeaux px-2 rounded-md text-white absolute top-0 left-0"></span>
-                  <span className="absolute top-1 right-1 text-bordeaux rounded-full">
-                    <Heart className="text-xl" />
-                  </span>
-                  <span className="absolute top-10 right-1 text-black rounded-full">
-                    <Eye className="text-xl" />
+                  <span className="absolute top-1 right-1 sm:top-2 sm:right-2 text-bordeaux rounded-full">
+                    <Heart className="w-5 h-5 sm:w-6 sm:h-6" />
                   </span>
                 </div>
                 <h1 className="font-bold font-sans pt-2 text-pearl">{product.title}</h1>
@@ -502,7 +501,7 @@ export default function HomeSection() {
         </div>
       </div>
       <div className="w-full sm:h-auto lg:h-[300px] flex flex-col sm:flex-col md:flex-col lg:flex-row justify-center items-center max-w-screen-2xl mx-auto">
-        <div className="sm:w-full lg:w-[70%] sm:justify-center gap-y-4 sm:items-center flex flex-col md:flex-col lg:flex-row lg:justify-evenly gap-x-4 ">
+        <div className="sm:w-full mt-14 lg:w-[70%] sm:justify-center gap-y-4 sm:items-center flex flex-col md:flex-col lg:flex-row lg:justify-evenly gap-x-4 ">
 
           {/* box 1 */}
           <div className='w-[260px] h-[130px] flex justify-center items-center flex-col gap-y-3 bg-onyx text-pearl'>
