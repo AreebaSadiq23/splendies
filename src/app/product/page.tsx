@@ -201,7 +201,7 @@ export default function ContactPage() {
                   transition={{ type: 'spring', duration: 0.8 }}
                   className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-pearl tracking-wide leading-tight drop-shadow-[0_2px_8px_rgba(109,15,54,0.5)] mt-4 sm:mt-10 max-w-xs sm:max-w-md md:max-w-xl font-libertinus text-left"
                 >
-                  Unveil Your <br /> Radiance
+                  Explore our <br /> Product
                 </motion.h1>
                 <motion.p
                   initial={{ opacity: 0 }}
