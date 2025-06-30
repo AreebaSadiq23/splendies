@@ -96,7 +96,7 @@ export default function Header() {
             >2</motion.span>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} className="hidden lg:block">
-            <Link href="/register">
+            <Link href="/signup">
               <User className="w-5 h-5 text-white/70 hover:text-white transition duration-300 cursor-pointer" />
             </Link>
           </motion.div>

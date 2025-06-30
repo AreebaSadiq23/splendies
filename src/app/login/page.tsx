@@ -1,138 +1,52 @@
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useAppContext } from "../context/AppContext/provider";
-import { Mail, Lock, Eye, EyeOff } from "lucide-react";
+import Image from "next/image";
 import Header from "../components/header";
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const { login } = useAppContext();
-  const router = useRouter();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-    setIsLoading(true);
-
-    try {
-      const success = await login(email, password);
-      if (success) {
-        router.push("/");
-      } else {
-        setError("Invalid email or password");
-      }
-    } catch {
-      setError("An error occurred. Please try again.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
+function Login() {
   return (
-    <>
-    <Header/>
-      <div className="min-h-screen bg-onyx flex items-center justify-center p-6 mt-20">
-        <div className="w-full max-w-md bg-charcoal rounded-lg shadow-lg p-8 space-y-6">
-          <h2 className="text-2xl font-bold text-center text-bordeaux font-libertinus">
-            Welcome Back
-          </h2>
-          <p className="text-center text-pearl/70 text-sm">
-            Sign in to your account to continue
-          </p>
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div className="space-y-4">
-              {/* Email Input */}
-              <div className="relative">
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <Mail
-                  className="absolute top-3 left-3 text-bordeaux"
-                  size={20}
-                />
-                <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-bordeaux text-sm placeholder:text-pearl/60 bg-onyx text-pearl focus:ring-bordeaux focus:border-bordeaux pl-10"
-                  placeholder="Email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              {/* Password Input */}
-              <div className="relative">
-                <label htmlFor="password" className="sr-only">
-                  Password
-                </label>
-                <Lock
-                  className="absolute top-3 left-3 text-bordeaux"
-                  size={20}
-                />
-                <input
-                  id="password"
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  autoComplete="current-password"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-bordeaux text-sm placeholder:text-pearl/60 bg-onyx text-pearl focus:ring-bordeaux focus:border-bordeaux pl-10"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <button
-                  type="button"
-                  className="absolute inset-y-0 right-3 flex items-center text-bordeaux"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? (
-                    <EyeOff className="h-5 w-5" />
-                  ) : (
-                    <Eye className="h-5 w-5" />
-                  )}
-                </button>
-              </div>
+    <><Header />
+      <div className="w-full mt-28 flex flex-col lg:flex-row justify-start items-start max-w-screen-2xl mx-auto px-4">
+        <div className="w-full lg:w-[600px] h-auto lg:h-[500px] m-0 lg:m-11 mb-8 lg:mb-0 flex-shrink-0">
+          <Image
+            src={"/images/sign-up.jpg"}
+            width={400}
+            height={400}
+            alt="Mobile"
+            className="w-full h-full object-cover rounded-lg shadow-md"
+          />
+        </div>
+        <div className="w-full lg:w-[600px] h-auto lg:h-[500px] my-0 flex flex-col justify-center items-center">
+          <div className="w-full max-w-md mx-auto">
+            <div>
+              <h1 className="sm:text-lg md:text-2xl lg:text-3xl mb-2">Login Here</h1>
+              <p className="text-sm pt-2 text-gray-300">Enter your details below</p>
             </div>
-
-            {/* Error Message */}
-            {error && (
-              <div className="text-center">
-                <p className="text-bordeaux text-sm">{error}</p>
-              </div>
-            )}
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className={`w-full py-3 px-4 text-sm font-medium text-pearl bg-bordeaux rounded-md hover:bg-bordeaux/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-bordeaux ${
-                isLoading ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-              disabled={isLoading}
-            >
-              {isLoading ? "Signing in..." : "Sign in"}
-            </button>
-          </form>
-
-          {/* Additional Options */}
-          <div className="mt-5 text-center">
-            <Link
-              href="/register"
-              className="text-bordeaux hover:underline transition"
-            >
-              Don&apos;t have an account? Sign up
-            </Link>
+            <form className="mt-5 space-y-5">
+              <input
+                type="email"
+                placeholder="Email or Phone Number"
+                className="py-2 px-3 bg-transparent border-b-2 border-charcoal text-pearl w-full focus:outline-none"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                className="py-2 px-3 bg-transparent border-b-2 border-charcoal text-pearl w-full focus:outline-none"
+              />
+            </form>
+            <div className="flex flex-col sm:flex-row items-center mt-10 gap-4">
+              <button className="py-2 px-6 w-full sm:w-auto bg-bordeaux text-pearl rounded-sm hover:bg-charcoal transition">Log In</button>
+              <button className="py-2 px-4 w-full sm:w-auto bg-charcoal text-pearl rounded-sm hover:bg-bordeaux transition">Forgot Password</button>
+            </div>
+            <div className="flex flex-col items-center mt-5 w-full">
+              <p className="text-sm text-pearl mt-3">
+                Don&apos;t have an account?{' '}
+                <a href="/signup" className="underline text-bordeaux">Sign Up</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </>
   );
 }
+
+export default Login;
